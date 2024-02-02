@@ -1,0 +1,14 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: lightsteelblue;
+}
+
+.link-style {
+  text-decoration: none;
+  padding-left: 20%;
+  white-space: nowrap;
+  color: black;
+}

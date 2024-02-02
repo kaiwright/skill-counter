@@ -1,0 +1,144 @@
+{
+    "skills": {
+        "skill01": {
+            "name": "HTML",
+            "count": "24"
+        },
+        "skill02": {
+            "name": "CSS",
+            "count": "23"
+        },
+        "skill03": {
+            "name": "JavaScript",
+            "count": "22"
+        },
+        "skill04": {
+            "name": "React",
+            "count": "13"
+        },
+        "skill05": {
+            "name": "PHP",
+            "count": "6"
+        },
+        "skill06": {
+            "name": "Laravel",
+            "count": "3"
+        },
+        "skill07": {
+            "name": "TypeScript",
+            "count": "6"
+        },
+        "skill08": {
+            "name": "Python",
+            "count": "3"
+        },
+        "skill09": {
+            "name": "SASS",
+            "count": "2"
+        },
+        "skill10": {
+            "name": "LESS",
+            "count": "2"
+        },
+        "skill11": {
+            "name": "Ruby",
+            "count": "1"
+        },
+        "skill12": {
+            "name": "jQuery",
+            "count": "5"
+        },
+        "skill13": {
+            "name": "Vue",
+            "count": "3"
+        },
+        "skill14": {
+            "name": "Angular",
+            "count": "4"
+        },
+        "skill15": {
+            "name": "Bootstrap",
+            "count": "2"
+        },
+        "skill16": {
+            "name": "Next.js",
+            "count": "1"
+        },
+        "skill17": {
+            "name": "Tailwind",
+            "count": "1"
+        },
+        "skill18": {
+            "name": "Django",
+            "count": "1"
+        },
+        "skill19": {
+            "name": "Flask",
+            "count": "1"
+        },
+        "skill20": {
+            "name": "React Native",
+            "count": "1"
+        },
+        "skill21": {
+            "name": "Node.js",
+            "count": "4"
+        },
+        "skill22": {
+            "name": "MySQL",
+            "count": "2"
+        },
+        "skill23": {
+            "name": "AWS",
+            "count": "1"
+        },
+        "skill24": {
+            "name": "Figma",
+            "count": "8"
+        },
+        "skill25": {
+            "name": "Sketch",
+            "count": "5"
+        },
+        "skill26": {
+            "name": "Adobe",
+            "count": "3"
+        },
+        "skill27": {
+            "name": "Microsoft",
+            "count": "1"
+        },
+        "skill28": {
+            "name": "Wordpress",
+            "count": "1"
+        },
+        "skill29": {
+            "name": "Git",
+            "count": "7"
+        },
+        "skill30": {
+            "name": "Gulp",
+            "count": "3"
+        },
+        "skill31": {
+            "name": "Grunt",
+            "count": "2"
+        },
+        "skill32": {
+            "name": "Google Analytics",
+            "count": "1"
+        },
+        "skill33": {
+            "name": "Mailchimp",
+            "count": "1"
+        },
+        "skill34": {
+            "name": "Framer",
+            "count": "2"
+        },
+        "skill35": {
+            "name": "Invision",
+            "count": "2"
+        }
+    }
+}
