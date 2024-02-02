@@ -1,0 +1,17 @@
+.footer {
+  min-height: 50px;
+  background: lightsteelblue;
+  justify-content: center;
+  margin-top: auto;
+  font-size: smaller;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h6 {
+  opacity: 0.7;
+}
