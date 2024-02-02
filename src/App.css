@@ -3,3 +3,24 @@
     color: black !important;
     border-color: lightsteelblue !important;
 }
+
+.align-items {
+    align-items: center;
+    display: flex;
+}
+
+.confirm-btns {
+    width: 20%;
+}
+
+.no {
+    background-color: rgba(255, 0, 0, 0.7) !important;
+    color: black;
+    border-color: red !important;
+}
+
+.yes {
+    background-color: rgba(14, 182, 14, 0.7) !important;
+    color: black;
+    border-color: green !important;
+}
