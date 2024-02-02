@@ -15,8 +15,11 @@ function Home() {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            [name]: value
+        }));
+    }
 
 
     const handleSubmit = (e) => {
@@ -24,15 +27,15 @@ function Home() {
         setFormData({
             input: ""
         })
-        setFoundSkills([])
+        setFoundSkills([]);
 
         const jobInput = formData.input;
 
-        Object.values(skillData.skills).forEach(skill => {
-            if (jobInput.includes(skill.name)) {
-                setFoundSkills((prevSkills) => [...prevSkills, skill.name]);
+        Object.entries(skillData.skills).forEach(([skillName]) => {
+            if (jobInput.includes(skillName)) {
+                setFoundSkills((prevSkills) => [...prevSkills, skillName]);
             }
-        })
+        });
     };
 
 
@@ -48,7 +51,24 @@ function Home() {
 
     // if save is true, then update the json file count of each named skill by 1
     const handleSave = () => {
+        console.log("Saved!")
+        foundSkills.forEach((element) => {
+            for (let skillName in skillData.skills) {
+                if (element === skillName) {
+                    console.log("Added 1 to " + skillName)
+                    skillData.skills[skillName].count = (parseInt(skillData.skills[skillName].count) + 1).toString();
+                }
+            }
+        });
+        writeToFile()
+    }
 
+    const writeToFile = () => {
+        console.log(skillData)
+    }
+
+    const handleRefresh = () => {
+        window.location.reload();
     }
 
 
@@ -56,17 +76,10 @@ function Home() {
         <div className='p-5'>
             <h3 className='text-center mb-3'>Home</h3>
 
-            {noResults && (
-                <Container className="no-results mb-3">
-                    <Card className="w-100">
-                        <Card.Title className="p-3">No results found!</Card.Title>
-                    </Card>
-                </Container>
-            )}
-
 
             {foundSkills.length > 0 ? (
                 <>
+
                     {foundSkills.map((skill) => {
                         return (
                             <SkillBtn
@@ -76,23 +89,29 @@ function Home() {
                         );
                     })}
                     {/* ask to save */}
-                    <h3>Skills Found!</h3>
-                    <h4>Save these skills?</h4>
-                    <Row>
-                        <Col>
-                        <Button>Yes</Button>
-                        </Col>
-                        <Col>
-                        <Button>No</Button>
-                        </Col>
-                        
-                    </Row>
-                    
-
+                    <h3 className='mt-3'>Skills Found!</h3>
+                    <div className='w-50 mb-4 mt-3'>
+                        <h4>Save these skills?</h4>
+                        <Row className='confirm-btns mb-3'>
+                            <Col >
+                                <Button onClick={handleSave} className='yes' type="submit">Yes</Button>
+                            </Col>
+                            <Col>
+                                <Button onClick={handleRefresh} className='no' type="submit">No</Button>
+                            </Col>
+                        </Row>
+                    </div>
 
                 </>
             ) : (
                 <>
+                    {noResults && (
+                        <Container className="no-results mb-3">
+                            <Card className="w-100">
+                                <Card.Title className="p-3">No results found!</Card.Title>
+                            </Card>
+                        </Container>
+                    )}
                 </>
             )}
 
