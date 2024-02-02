@@ -33,8 +33,8 @@ function Home() {
                 setFoundSkills((prevSkills) => [...prevSkills, skill.name]);
             }
         })
-
     };
+
 
     // checks if there are any results returned
     useEffect(() => {
@@ -45,10 +45,12 @@ function Home() {
         }
     }, [foundSkills]);
 
+
     // if save is true, then update the json file count of each named skill by 1
     const handleSave = () => {
 
     }
+
 
     return (
         <div className='p-5'>
@@ -74,6 +76,18 @@ function Home() {
                         );
                     })}
                     {/* ask to save */}
+                    <h3>Skills Found!</h3>
+                    <h4>Save these skills?</h4>
+                    <Row>
+                        <Col>
+                        <Button>Yes</Button>
+                        </Col>
+                        <Col>
+                        <Button>No</Button>
+                        </Col>
+                        
+                    </Row>
+                    
 
 
                 </>
