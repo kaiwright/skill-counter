@@ -1,6 +1,6 @@
 import { Container, Card, Form, Row, Col, Button } from 'react-bootstrap';
 import React, { useEffect, useState } from "react";
-import skillData from '../data/data.json';
+import { getDatabase, ref, onValue, set } from "firebase/database";
 import '../App.css'
 import SkillBtn from '../components/skillBtn';
 
@@ -12,6 +12,7 @@ function Home() {
     });
     const [noResults, setNoResults] = useState(false);
     const [foundSkills, setFoundSkills] = useState([]);
+    const [skillData, setSkillData] = useState({ skills: {} });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -24,20 +25,36 @@ function Home() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        // clearing previous results
         setFormData({
             input: ""
         })
         setFoundSkills([]);
 
+        // input retrieval
         const jobInput = formData.input;
 
-        Object.entries(skillData.skills).forEach(([skillName]) => {
-            if (jobInput.includes(skillName)) {
-                setFoundSkills((prevSkills) => [...prevSkills, skillName]);
-            }
+        // database info retrieval
+        const db = getDatabase()
+        const skillsRef = ref(db, "skills");
+        onValue(skillsRef, (snapshot) => {
+            const skillData = snapshot.val();
+            console.log("Retrieved");
+            setSkillData(skillData);
+
+            const skillsFoundSet = Object.entries(skillData).reduce((skills, [skillName]) => {
+                if (jobInput.includes(skillName)) {
+                    console.log("Executed if loop");
+                    skills.add(skillName);
+                }
+                return skills;
+            }, new Set());
+
+            const skillsFound = Array.from(skillsFoundSet);
+            setFoundSkills(skillsFound);
         });
     };
-
 
     // checks if there are any results returned
     useEffect(() => {
@@ -53,19 +70,31 @@ function Home() {
     const handleSave = () => {
         console.log("Saved!")
         foundSkills.forEach((element) => {
-            for (let skillName in skillData.skills) {
+            for (let skillName in skillData) {
                 if (element === skillName) {
                     console.log("Added 1 to " + skillName)
-                    skillData.skills[skillName].count = (parseInt(skillData.skills[skillName].count) + 1).toString();
+                    skillData[skillName].count = (parseInt(skillData[skillName].count) + 1).toString();
                 }
             }
         });
-        writeToFile()
+        writeToDB(skillData)
     }
 
-    const writeToFile = () => {
+    // overwrites all data in firebase
+    const writeToDB = (skillData) => {
         console.log(skillData)
-    }
+        const db = getDatabase()
+        const skillsRef = ref(db, "skills");
+
+        set(skillsRef, skillData)
+            .then(() => {
+                console.log("Data overwritten successfully");
+            })
+            .catch((error) => {
+                console.error("Error overwriting data:", error);
+            });
+    };
+
 
     const handleRefresh = () => {
         window.location.reload();

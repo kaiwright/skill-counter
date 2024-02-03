@@ -45,7 +45,7 @@
         "Bootstrap": {
             "count": "2"
         },
-        "Next.js": {
+        "Next": {
             "count": "1"
         },
         "Tailwind": {
@@ -60,7 +60,7 @@
         "React Native": {
             "count": "1"
         },
-        "Node.js": {
+        "Node": {
             "count": "4"
         },
         "MySQL": {
