@@ -89,6 +89,7 @@ function Home() {
         set(skillsRef, skillData)
             .then(() => {
                 console.log("Data overwritten successfully");
+                handleRefresh();
             })
             .catch((error) => {
                 console.error("Error overwriting data:", error);
