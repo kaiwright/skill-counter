@@ -1,5 +1,5 @@
 import { Container, Card, Form, Row, Col, Button } from 'react-bootstrap';
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getDatabase, ref, onValue, set } from "firebase/database";
 import '../App.css'
 import SkillBtn from '../components/skillBtn';
