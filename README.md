@@ -1,8 +1,21 @@
-# React + Vite
+# The Front-End Developer's Skill Counter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+This is a skill counter for front-end jobs. It filters through job descriptions to find set keywords and returns those it finds. All data reads/writes to a database, and it is displayed as a pie chart on the 'Data' page. 
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Application deploys at live URL
+Link: https://main--portfoliowebsitekaiwright.netlify.app/
+
+## Usage
+
+You can paste any job description into the text box and it will return the keywords found. It will then give the option to save these skills or not. This process can be repeated as many times as you want. The data page will give you the count of all skills saved so far. 
+
+## License
+
+MIT License
+
+## Credits
+
+Work completed by Kai Wright 2024
