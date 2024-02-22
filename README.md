@@ -6,7 +6,7 @@ This is a skill counter for front-end jobs. It filters through job descriptions 
 ## Installation
 
 Application deploys at live URL
-Link: https://main--portfoliowebsitekaiwright.netlify.app/
+Link: [https://main--portfoliowebsitekaiwright.netlify.app/](https://main--skillcounter.netlify.app/)
 
 ## Usage
 
