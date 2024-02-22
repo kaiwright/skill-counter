@@ -1,7 +1,7 @@
 # The Front-End Developer's Skill Counter
 
 ## Description
-This is a skill counter for front-end and UI/UX Design jobs. It filters through job descriptions to find set keywords and returns those it finds. All data reads/writes to a firebase database, and it is displayed as a pie chart on the 'Data' page. 
+This is a skill counter for front-end and UI/UX design jobs. It filters through job descriptions to find set keywords and returns those it finds. All data reads/writes to a firebase database, and it is displayed as a pie chart on the 'Data' page. 
 
 ## Installation
 
