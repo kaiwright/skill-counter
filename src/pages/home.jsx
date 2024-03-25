@@ -32,8 +32,8 @@ function Home() {
         })
         setFoundSkills([]);
 
-        // input retrieval
-        const jobInput = formData.input;
+        // input retrieval and upper conversion
+        const jobInput = (formData.input).toUpperCase();
 
         // database info retrieval
         const db = getDatabase()
